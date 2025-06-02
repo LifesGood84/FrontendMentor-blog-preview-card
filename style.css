@@ -1,0 +1,179 @@
+/* https://gwfh.mranftl.com/fonts */
+
+/* Figtree Medium */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./assets/fonts/static/Figtree-Medium.ttf') format('truetype'); 
+}
+/* Figtree Extra Bold */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 800;
+  src: url('./assets/fonts/static/Figtree-ExtraBold.ttf') format('truetype'); 
+}
+
+:root {
+    /* COLORS */
+    --yellow: hsl(47, 88%, 63%);
+    --gray-950: hsl(0, 0%, 7%);
+    --gray-500: hsl(0, 0%, 42%);
+    --white: hsl(0, 0%, 100%);
+    /* SPACING */
+    --space-xs: 4px;
+    --space-s: 8px;
+    --space-m: 12px;
+    --space-l: 24px;
+    /* FONTS */
+    --Text-1-font-size: 1.5rem;
+    --Text-1-line-height: 150%;
+    --Text-1-letter-spacing: 0px;
+    --Text-1-font-weight: 800;
+
+    --Text-2-font-size: 1rem;
+    --Text-2-line-height: 150%;
+    --Text-2-letter-spacing: 0px;
+    --Text-2-font-weight: 500;
+
+    --Text-3-font-size: 0.875rem;
+    --Text-3-line-height: 150%;
+    --Text-3-letter-spacing: 0px;
+    --Text-3-font-weight: 500;
+
+    --Text-4-font-size: 0.875rem;
+    --Text-4-line-height: 150%;
+    --Text-4-letter-spacing: 0px;
+    --Text-4-font-weight: 800;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Figtree', sans-serif, Arial, Helvetica, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--yellow);
+}
+h1,
+h2,
+h3,
+p,
+img
+{
+  margin: 0;
+}
+
+.card{
+    width: 384px;
+    height: 522px;
+    background-color: var(--white);
+    padding: var(--space-l);
+    box-shadow: 8px 8px 0px 0px #000000;
+    border-radius: 20px;
+    outline: solid 1px var(--gray-950);
+}
+.card .html-image{
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: var(--space-l);    
+}
+.card .category{
+    background-color: var(--yellow);
+    display: inline-block;
+    padding: var(--space-xs) var(--space-m);
+    border-radius: 4px;
+
+    font-size: var(--Text-4-font-size);
+    line-height: var(--Text-4-line-height);
+    letter-spacing: var(--Text-4-letter-spacing);
+    font-weight: var(--Text-4-font-weight);
+    color: var(--gray-950);
+    margin: 0 0 var(--space-m) 0;
+}
+.card .published-date{
+    font-size: var(--Text-3-font-size);
+    line-height: var(--Text-3-line-height);
+    letter-spacing: var(--Text-3-letter-spacing);
+    font-weight: var(--Text-3-font-weight);
+    color: var(--gray-950);
+    margin: 0 0 var(--space-m) 0;
+}
+.card .title{
+    font-size: var(--Text-1-font-size);
+    line-height: var(--Text-1-line-height);
+    letter-spacing: var(--Text-1-letter-spacing);
+    font-weight: var(--Text-1-font-weight);
+    color: var(--gray-950);
+    margin: 0 0 var(--space-m) 0;
+    transition: color 0.3s ease-in-out;
+}
+.card .title:hover,
+.card .title:active,
+.card .title:focus{
+    color: var(--yellow);
+    cursor: pointer;
+}
+
+
+.card .info{
+    font-size: var(--Text-2-font-size);
+    line-height: var(--Text-2-line-height);
+    letter-spacing: var(--Text-2-letter-spacing);
+    font-weight: var(--Text-2-font-weight);
+    color: var(--gray-500);
+}
+
+.card .author-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin: var(--space-l) 0 0 0;
+}
+.card .author-section img{
+    display: block;
+    margin: 0 var(--space-m) 0 0;
+}  
+.card .author-section .author-name{
+    display: inline-block;
+    font-size: var(--Text-4-font-size);
+    line-height: var(--Text-4-line-height);
+    letter-spacing: var(--Text-4-letter-spacing);
+    font-weight: var(--Text-4-font-weight);
+    color: var(--gray-950);
+}
+
+/* 375px MOBILE 23.438em */
+@media (max-width: 400px) {
+    :root{
+        --Text-4-font-size: 0.75rem; /* 12px category */
+        --Text-3-font-size: 0.75rem; /* 12px date */
+        --Text-1-font-size: 1.25rem; /* 20px h1 */
+        --Text-2-font-size: 0.875rem; /* 14px info */
+    }
+    .card{
+        width: 327px;
+        height: 500px;
+    } 
+    .card .author-section .author-name {
+        font-size: 0.875rem /* 14px author */
+    }    
+}
+
+
+
